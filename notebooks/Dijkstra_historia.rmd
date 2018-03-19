@@ -1,0 +1,27 @@
+## Introducción
+El algoritmo Dijkstra, es un algoritmo para determinar el camino más corto dado un vértice de origen hacia uno de llegada. 
+
+
+## De dónde vien el nombre (Dijkstra)
+Su nombre alude a Edsger Dijkstra, científico de la computación de los Países Bajos que lo describió por primera vez en 1959.
+
+## Otros algoritmos parecidos
+
+## Pseudocódigo
+
+DIJKSTRA (Grafo G, nodo_fuente s)       
+   para u ∈ V[G] hacer
+       distancia[u] = INFINITO
+       padre[u] = NULL
+       visto[u] = false
+   distancia[s] = 0
+   adicionar (cola, (s, distancia[s]))
+   mientras que cola no es vacía hacer
+       u = extraer_mínimo(cola)
+       visto[u] = true
+       para todos v ∈ adyacencia[u] hacer
+           si distancia[v] > distancia[u] + peso (u, v) hacer
+               distancia[v] = distancia[u] + peso (u, v)
+               padre[v] = u
+               adicionar(cola,(v, distancia[v]))
+
